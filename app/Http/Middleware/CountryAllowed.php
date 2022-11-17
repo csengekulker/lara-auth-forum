@@ -14,8 +14,12 @@ class CountryAllowed
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        return $next($request);
+    public function handle(Request $request, Closure $next) {
+ 
+        if( $request->country && !in_array( $request->country, array( "hu", "at" ))) {
+     
+            return redirect( "no-allowed" );
+        }
+        return $next( $request );
     }
 }
