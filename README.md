@@ -6,6 +6,10 @@ https://szit.hu/doku.php?id=oktatas:web:back-end_framework:laravel:laravel_jegyz
 
 authentikacio
 
+    breeze  
+    composer require laravel/breeze --dev
+    php artisan breeze:install
+
 ## forum porjekt is itt lesz
 
 composer require laravel/sanctum
